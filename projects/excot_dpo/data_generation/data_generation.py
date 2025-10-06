@@ -377,7 +377,7 @@ def main():
             "model": args.model_name,
             "tensor_parallel_size": args.tp_size,
             "enable_chunked_prefill": False,
-            "download_dir": "/data-fast/vllm",
+            "download_dir": "/data/stud_agdbs/akzxy/HF_HOME",
             "gpu_memory_utilization": 0.95,
             "max_model_len": 12288,
             "trust_remote_code": True,
