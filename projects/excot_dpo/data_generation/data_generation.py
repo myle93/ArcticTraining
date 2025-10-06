@@ -332,7 +332,9 @@ Database Info
 Question
 Question: {question}
 **************************
-""".strip()
+""".strip()[
+        :131072
+    ]
     rt_messages = dnc_messages + [
         {"role": "user", "content": prompt},
     ]
@@ -376,7 +378,7 @@ def main():
             "enable_chunked_prefill": False,
             "download_dir": "/data/stud_agdbs/akzxy/HF_HOME",
             "gpu_memory_utilization": 0.95,
-            "max_model_len": 220386,
+            "max_model_len": 131072,
             "trust_remote_code": True,
             "swap_space": 4,
         }
