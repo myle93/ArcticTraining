@@ -189,9 +189,6 @@ def load_bird_dataset(data_config: DataGenerationConfig, mode: str, cache_dir: s
         question_set_path = data_config.dev_question_file_path
     else:
         raise ValueError(f"Invalid mode: {mode}")
-    import os
-
-    print("Current working directory:", os.getcwd())
 
     raw_metadata = _load_db_metadata(tables_json_path)
     questions = load_dataset(
@@ -279,7 +276,7 @@ def dataset_conversion(data_config):
                     "ground_truth": question["SQL"],
                 }
             )
-    all_rows = all_rows[200:400]
+
     if "evidence" in questions[0]:
         new_dataset = Dataset.from_dict(
             {
@@ -336,7 +333,7 @@ Question
 Question: {question}
 **************************
 """.strip()
-    rt_messages = [
+    rt_messages = dnc_messages + [
         {"role": "user", "content": prompt},
     ]
     return rt_messages
