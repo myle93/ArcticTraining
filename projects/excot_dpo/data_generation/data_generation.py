@@ -376,7 +376,7 @@ def main():
             "enable_chunked_prefill": False,
             "download_dir": "/data/stud_agdbs/akzxy/HF_HOME",
             "gpu_memory_utilization": 0.95,
-            "max_model_len": 12288,
+            "max_model_len": 32768,
             "trust_remote_code": True,
             "swap_space": 4,
         }
