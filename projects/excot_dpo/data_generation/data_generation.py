@@ -332,9 +332,10 @@ Database Info
 Question
 Question: {question}
 **************************
-""".strip()[
-        :32768
-    ]
+""".strip()
+    if len(prompt) > 32768:
+        print("Prompt is too long. Length = ", len(prompt))
+        prompt = prompt[:32768]
     rt_messages = dnc_messages + [
         {"role": "user", "content": prompt},
     ]
