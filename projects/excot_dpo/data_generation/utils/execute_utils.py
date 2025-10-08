@@ -31,5 +31,5 @@ def _extract_sql(message):
     else:
         if matches2:
             return matches2[-1].strip()
-        print("\nno matched code found...\n")
+        # print("\nno matched code found...\n")
         return None
