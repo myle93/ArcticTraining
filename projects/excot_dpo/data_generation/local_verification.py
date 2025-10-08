@@ -147,7 +147,7 @@ def check_correctness(checking_list, db_desc_str, db_folder, bird_source, timeou
                         # Handle any other exceptions
                         eval_results.append(None)  # or handle differently as needed
     else:
-        for i, check_row in tqdm(checking_list):
+        for check_row in tqdm(checking_list):
             eval_results.append(wrapper((check_row, bird_source, db_folder)))
 
     final_result = [None] * len(bird_source)
@@ -202,7 +202,7 @@ class Verifier:
         full_data = []
 
         print("Read generated data")
-        for i, f_data in tqdm(self.source_data):
+        for i, f_data in enumerate(tqdm(self.source_data)):
             if "custom_id" in f_data:
                 custom_id = f_data["custom_id"]
             else:
