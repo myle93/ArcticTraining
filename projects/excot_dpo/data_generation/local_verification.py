@@ -120,7 +120,7 @@ def wrapper(args):
 
 def check_correctness(checking_list, db_desc_str, db_folder, bird_source, timeout=5):
 
-    num_process = 1
+    num_process = 2
 
     eval_results = []
     chunk_size = 32
